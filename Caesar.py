@@ -1,10 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 '''
 Program:      Caesar.py
 Author:       Jeff VanSickle
 Created:      20151114 
-Modified:     20151114
 
 Program decrypts text encrypted with Caesar shift cipher. Asks
 user for input - the encrypted text - then determines the shift
@@ -15,9 +14,6 @@ user-specified shift offset.
 
 Program makes use of crypto.py library.
 
-UPDATES:
-     yyyymmdd JV - Changed something, commenting here
-
 INSTRUCTIONS:
 
 '''
@@ -25,14 +21,13 @@ INSTRUCTIONS:
 import crypto
 
 if __name__ == "__main__":
-
     # Get input string
-    inputMsg = raw_input("Please enter your message: ")
-    doBruteForce = raw_input("Want to brute force (Y/N)? ")
+    input_msg = input("Please enter your message: ")
+    do_brute_force = input("Want to brute force (Y/N)? ")
 
-    if doBruteForce == "Y":
-        crypto.enumShift(inputMsg)
-    elif doBruteForce == "N":
-        shift = raw_input("Shift (1-25)? ")
-        cryptType = raw_input("Encrypt or Decrypt (E or D)? ")
-        crypto.cryptCaesar(inputMsg, int(shift), cryptType)
+    if do_brute_force == "Y":
+        crypto.find_shift(input_msg)
+    elif do_brute_force == "N":
+        shift = input("Shift (1-25)? ")
+        output_str = crypto.crypt_caesar(input_msg, int(shift))
+        print(output_str)
