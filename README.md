@@ -1,9 +1,8 @@
-================================================================================
 # crypto
-Python implementations of popular cryptography algorithms
-Jeff VanSickle
-Fall 2016
-================================================================================
+Python implementations of popular cryptography algorithms  
+Jeff VanSickle  
+Fall 2016  
+---
 
 This project is my attempt to build Python implementations of popular and/or
 common approaches in cryptology. These were inspired by my reading of *The Code
